@@ -1,0 +1,101 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 64px;
+  padding-right: 64px;
+  margin-bottom: 20px;
+}
+
+.logoWrp {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    gap: 6px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    gap: 8px;
+  }
+
+  img {
+    width: 20px;
+    @media screen and (min-width: $breakpoint-tablet) {
+      width: 24px;
+    }
+    @media screen and (min-width: $breakpoint-desktop) {
+      width: 28px;
+    }
+  }
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: -0.4px;
+    @media screen and (min-width: $breakpoint-tablet) {
+      font-size: 18px;
+    }
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-size: 20px;
+    }
+  }
+}
+
+.navWrp {
+  display: flex;
+  gap: 28px;
+}
+.navLink {
+  color: $mainTextColor;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25em;
+  &:hover,
+  :focus {
+    color: $mainAccentColor;
+    transition: $hoverAnimation;
+  }
+}
+.authWrp {
+  display: flex;
+  gap: 16px;
+}
+.loginBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  &:hover,
+  :focus {
+    color: $mainAccentColor;
+    transition: $hoverAnimation;
+  }
+  span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25em;
+  }
+}
+
+.registrationBtn {
+  padding: 14px 39px;
+  background-color: #121417;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25em;
+  border: transparent;
+  &:hover,
+  :focus {
+    color: #121417;
+    background-color: $mainAccentColor;
+    transition: $hoverAnimation;
+  }
+}

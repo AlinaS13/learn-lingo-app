@@ -1,0 +1,8 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.container {
+  @include container;
+  padding-top: 20px;
+  padding-bottom: 32px;
+}
