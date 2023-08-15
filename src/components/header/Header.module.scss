@@ -4,10 +4,9 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding-left: 64px;
   padding-right: 64px;
-  margin-bottom: 20px;
 }
 
 .logoWrp {
@@ -59,7 +58,11 @@
     color: $mainAccentColor;
     transition: $hoverAnimation;
   }
+  &[aria-current="page"] {
+    color: $mainAccentColor;
+  }
 }
+
 .authWrp {
   display: flex;
   gap: 16px;
@@ -98,4 +101,9 @@
     background-color: $mainAccentColor;
     transition: $hoverAnimation;
   }
+}
+
+.authUserWrp {
+  display: flex;
+  gap: 8px;
 }

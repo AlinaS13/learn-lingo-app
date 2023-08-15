@@ -1,0 +1,44 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.container {
+  @include container;
+  padding-top: 20px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loadMoreBtn {
+  padding: 16px 48px;
+  border-radius: 12px;
+  background-color: $mainAccentColor;
+  color: $mainTextColor;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.55em;
+  outline: none;
+
+  padding: 16px 48px;
+  border-radius: 12px;
+  border: transparent;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $mainTextColor;
+    transition: $hoverAnimation;
+  }
+}
+
+.favoritesText {
+  color: $mainTextColor;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1em;
+  margin-top: 50px;
+}
+
+.favoritesTeachersList {
+  width: 100%;
+}

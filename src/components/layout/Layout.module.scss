@@ -1,0 +1,10 @@
+// @import "../../index.scss";
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.content {
+  // min-height: 100vh;
+  // @include container;
+  padding-top: 20px;
+  padding-bottom: 32px;
+}

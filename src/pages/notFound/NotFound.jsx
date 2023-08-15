@@ -1,5 +1,12 @@
+import styles from "./NotFound.module.scss";
+import notFound from "../../assets/images/not-found.jpg";
 const NotFoundPage = () => {
-  return <div>Not Found </div>;
+  return (
+    <div className={styles.container}>
+      <p className={styles.notFoundText}>Page not found</p>
+      <img src={notFound} alt="notFound" width="350px" height="350px" />
+    </div>
+  );
 };
 
 export default NotFoundPage;

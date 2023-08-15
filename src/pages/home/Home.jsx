@@ -1,11 +1,10 @@
-import { Header } from "../../components/header/Header";
+// import { Header } from "../../components/header/Header";
 import { Main } from "../../components/main/Main";
-import style from "./Home.module.scss";
+import styles from "./Home.module.scss";
 
 const HomePage = () => {
   return (
-    <div className={style.container}>
-      <Header />
+    <div className={styles.container}>
       <Main />
     </div>
   );

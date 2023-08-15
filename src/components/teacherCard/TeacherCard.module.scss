@@ -1,0 +1,213 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.teacherItem {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  background: $secondaryBgColor;
+  border-radius: 24px;
+  padding: 24px;
+  //   justify-content: space-between;
+}
+.teacherMainInfoWrp {
+  width: 100%;
+}
+.teacherMainInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.teacherImgWrp {
+  position: relative;
+  align-items: center;
+  background: $mainBgColor;
+  border: 3px solid $mainAccentColor;
+  border-radius: 100px;
+  display: flex;
+  flex-shrink: 0;
+  height: 120px;
+  justify-content: center;
+  width: 120px;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 17px;
+    right: 23px;
+    width: 12px;
+    height: 12px;
+    background-color: $mainBgColor;
+    border-radius: 50%;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    top: 18px;
+    right: 25px;
+    width: 8px;
+    height: 8px;
+    background-color: #38cd3e;
+    border-radius: 50%;
+  }
+}
+.teacherImg {
+  border-radius: 50%;
+}
+.teacherPreTitle {
+  color: $secondaryTextColor;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin-bottom: 8px;
+}
+.teacherName {
+  color: $mainTextColor;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1em;
+}
+.teacherInfoListWrp {
+  display: flex;
+  align-items: flex-start;
+  gap: 64px;
+}
+.teacherInfoList {
+  display: flex;
+  //   gap: 32px;
+  align-items: flex-start;
+}
+.teacherInfoItem {
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-right: 1px solid rgba(18, 20, 23, 0.2);
+  &:last-child {
+    // margin-left: 64px;
+    border-right: none;
+  }
+}
+.teacherInfoText {
+  color: $mainTextColor;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+.priceColor {
+  color: #38cd3e;
+}
+
+.teacherSecondaryInfo {
+  span {
+    color: $secondaryTextColor;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+  }
+  p {
+    color: $mainTextColor;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+    margin-bottom: 8px;
+    &:last-of-type {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.readMoreBtn {
+  background-color: transparent;
+  border: none;
+  color: $mainTextColor;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5em;
+  text-decoration-line: underline;
+  margin-bottom: 32px;
+}
+.teacherExperience {
+  color: $mainTextColor;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin-bottom: 32px;
+}
+
+.reviewsItem {
+  margin-bottom: 32px;
+}
+
+.reviewsUser {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.teacherLevelsList {
+  display: flex;
+  gap: 12px;
+}
+.teacherLevelsItem {
+  border-radius: 35px;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  padding: 8px 12px;
+  color: $mainTextColor;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.44em;
+  &:first-of-type {
+    background-color: $mainAccentColor;
+  }
+}
+.reviewer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3px;
+  div {
+    display: flex;
+    align-items: center;
+  }
+  p {
+    color: $secondaryTextColor;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+  }
+  span {
+    color: $mainTextColor;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.28em;
+  }
+}
+.reviewerText {
+  color: $mainTextColor;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+.addToFavoriteBtn {
+  border: none;
+  background-color: transparent;
+}
+.bookLessonBtn {
+  color: $mainTextColor;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.55em;
+  outline: none;
+  margin-bottom: 32px;
+  padding: 16px 48px;
+  border-radius: 12px;
+  border: transparent;
+  background-color: $mainAccentColor;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $mainTextColor;
+    transition: $hoverAnimation;
+  }
+}

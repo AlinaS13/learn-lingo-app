@@ -1,11 +1,12 @@
-import style from "./Main.module.scss";
+import styles from "./Main.module.scss";
 import mainImg from "../../assets/images/main-img.jpg";
+import { NavLink } from "react-router-dom";
 
 export const Main = () => {
   return (
-    <main className={style.mainContainer}>
-      <div className={style.mainContentFlex}>
-        <div className={style.mainContentWrp}>
+    <section className={styles.mainContainer}>
+      <div className={styles.mainContentFlex}>
+        <div className={styles.mainContentWrp}>
           {" "}
           <h1>
             Unlock your potential with the best <span>language</span> tutors
@@ -15,36 +16,39 @@ export const Main = () => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </p>
-          <button>Get started</button>
+          <NavLink className={styles.getStartedLink} to="/teachers">
+            Get started
+          </NavLink>
+          {/* <button type="button" onClick={}>Get started</button> */}
         </div>
         <img src={mainImg} alt="mainImg" />
       </div>
-      <ul className={style.advancesList}>
+      <ul className={styles.advancesList}>
         <li>
-          <span className={style.advancesNumber}>
+          <span className={styles.advancesNumber}>
             32,000<span>&nbsp;+</span>
           </span>
-          <span className={style.advancesText}>Experienced tutors</span>
+          <span className={styles.advancesText}>Experienced tutors</span>
         </li>
         <li>
-          <span className={style.advancesNumber}>
+          <span className={styles.advancesNumber}>
             300,000<span>&nbsp;+</span>
           </span>
-          <span className={style.advancesText}>5-star tutor reviews</span>
+          <span className={styles.advancesText}>5-star tutor reviews</span>
         </li>
         <li>
-          <span className={style.advancesNumber}>
+          <span className={styles.advancesNumber}>
             120<span>&nbsp;+</span>
           </span>
-          <span className={style.advancesText}>Subjects taught</span>
+          <span className={styles.advancesText}>Subjects taught</span>
         </li>
         <li>
-          <span className={style.advancesNumber}>
+          <span className={styles.advancesNumber}>
             200<span>&nbsp;+</span>
           </span>
-          <span className={style.advancesText}>Tutor nationalities</span>
+          <span className={styles.advancesText}>Tutor nationalities</span>
         </li>
       </ul>
-    </main>
+    </section>
   );
 };

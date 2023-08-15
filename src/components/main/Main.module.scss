@@ -21,6 +21,7 @@
   border-radius: 30px;
   padding-top: 98px;
   padding-left: 64px;
+  padding-bottom: 60px;
   h1 {
     padding-right: 108px;
     // max-width: 548px;
@@ -49,25 +50,24 @@
     letter-spacing: -0.32px;
     margin-bottom: 64px;
   }
-  button {
-    padding: 16px 88px;
-    border-radius: 12px;
-    background: $mainAccentColor;
-    color: $mainTextColor;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.55em;
-    border: transparent;
-    margin-bottom: 60px;
-    &:hover,
-    :focus {
-      color: #fff;
-      background-color: $mainTextColor;
-      transition: $hoverAnimation;
-    }
+}
+.getStartedLink {
+  padding: 16px 88px;
+  border-radius: 12px;
+  background: $mainAccentColor;
+  color: $mainTextColor;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.55em;
+  border: transparent;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $mainTextColor;
+    transition: $hoverAnimation;
   }
 }
-
 .advancesList {
   display: flex;
   gap: 100px;
