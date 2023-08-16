@@ -18,8 +18,8 @@
   display: flex;
   justify-content: flex-start;
   height: 48px;
-  padding-left: 18px;
-  padding-right: 18px;
+  padding: 0 18px;
+
   align-items: center;
   border-radius: 14px;
   background: $secondaryBgColor;
@@ -27,13 +27,13 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 1.11;
-
+  cursor: pointer;
   box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
     rgba(0, 0, 0, 0.25);
 }
 
 .filterBtn {
-  border: none;
+  border: transparent;
   background-color: inherit;
   position: absolute;
   top: 50%;
@@ -43,25 +43,22 @@
 
 .dropDowList {
   position: absolute;
-  z-index: 50;
+  display: flex;
+  gap: 8px;
+  z-index: 8;
   top: 54px;
   left: 0;
   width: 100%;
-  display: flex;
-  gap: 8px;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px 0;
   border-radius: 14px;
   background: $secondaryBgColor;
-  color: var(--main-bleak);
-  font-family: Roboto;
+  color: $mainTextColor;
   font-size: 18px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 1.11;
+  line-height: 1.11em;
   transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1),
     opacity 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
   box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
@@ -69,6 +66,7 @@
   span {
     padding-left: 16px;
     color: $secondaryTextColor;
+    cursor: pointer;
   }
 }
 .dropDownItem {

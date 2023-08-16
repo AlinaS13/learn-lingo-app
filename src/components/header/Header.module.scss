@@ -78,7 +78,8 @@
   &:hover,
   :focus {
     color: $mainAccentColor;
-    transition: $hoverAnimation;
+    transform: scale(1.2);
+    // transition: $hoverAnimation;
   }
   span {
     font-size: 16px;

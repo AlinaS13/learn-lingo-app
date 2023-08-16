@@ -83,7 +83,7 @@ export const TeacherCard = ({ teacher }) => {
                 </p>
               </li>
               <li className={styles.teacherInfoItem}>
-                <HiStar color="#10BAFC" size={16} />
+                <HiStar color="#FFC531" size={16} />
                 <p className={styles.teacherInfoText}>Rating: {rating}</p>
               </li>
               <li className={styles.teacherInfoItem}>
@@ -144,7 +144,7 @@ export const TeacherCard = ({ teacher }) => {
                       <p>{review.reviewer_name}</p>
                       <div>
                         {" "}
-                        <HiStar color="#10BAFC" size={16} />
+                        <HiStar color="#FFC531" size={16} />
                         <span>{review.reviewer_rating},0</span>
                       </div>
                     </div>

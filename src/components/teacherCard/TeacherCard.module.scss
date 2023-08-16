@@ -194,6 +194,10 @@
 .addToFavoriteBtn {
   border: none;
   background-color: transparent;
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
 }
 .bookLessonBtn {
   color: $mainTextColor;
