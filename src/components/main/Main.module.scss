@@ -5,15 +5,14 @@
 }
 .mainContentFlex {
   display: flex;
-  align-items: center;
+  height: 530px;
+  align-items: stretch;
   gap: 24px;
   margin-bottom: 24px;
 
   img {
-    // background-color: $mainAccentColor;
-    // border-radius: 30px;
-    min-width: 588px;
-    max-height: 584px;
+    width: 568px;
+    border-radius: 30px;
   }
 }
 .mainContentWrp {
@@ -21,7 +20,7 @@
   border-radius: 30px;
   padding-top: 98px;
   padding-left: 64px;
-  padding-bottom: 60px;
+
   h1 {
     padding-right: 108px;
     // max-width: 548px;
@@ -43,7 +42,6 @@
   }
   p {
     padding-right: 185px;
-    // max-width: 471px;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.37em;

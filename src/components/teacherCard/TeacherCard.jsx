@@ -83,7 +83,7 @@ export const TeacherCard = ({ teacher }) => {
                 </p>
               </li>
               <li className={styles.teacherInfoItem}>
-                <HiStar color="#FFC531" size={16} />
+                <HiStar color="#10BAFC" size={16} />
                 <p className={styles.teacherInfoText}>Rating: {rating}</p>
               </li>
               <li className={styles.teacherInfoItem}>
@@ -99,14 +99,14 @@ export const TeacherCard = ({ teacher }) => {
                 onClick={handleRemoveFavoritesTeachers}
                 className={styles.addToFavoriteBtn}
               >
-                <AiFillHeart size={26} color="#0089d1 " />
+                <AiFillHeart size={26} color="#10BAFC" />
               </button>
             ) : (
               <button
                 onClick={handleAddFavoritesTeachers}
                 className={styles.addToFavoriteBtn}
               >
-                <AiOutlineHeart size={26} color="#0089d1 " />
+                <AiOutlineHeart size={26} color="#10BAFC" />
               </button>
             )}
           </div>
@@ -144,7 +144,7 @@ export const TeacherCard = ({ teacher }) => {
                       <p>{review.reviewer_name}</p>
                       <div>
                         {" "}
-                        <HiStar color="#FFC531" size={16} />
+                        <HiStar color="#10BAFC" size={16} />
                         <span>{review.reviewer_rating},0</span>
                       </div>
                     </div>

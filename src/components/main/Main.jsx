@@ -1,5 +1,5 @@
 import styles from "./Main.module.scss";
-import mainImg from "../../assets/images/main-img.jpg";
+import mainImg from "../../assets/images/main-img-2.jpg";
 import { NavLink } from "react-router-dom";
 
 export const Main = () => {

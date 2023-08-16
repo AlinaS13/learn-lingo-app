@@ -1,6 +1,11 @@
 @import "../../scss/mixins";
 @import "../../scss/variables";
 
+.filterContainer {
+  @include container;
+  margin-bottom: 32px;
+  margin-top: 12px;
+}
 .container {
   @include container;
   padding-top: 20px;
@@ -32,4 +37,19 @@
     background-color: $mainTextColor;
     transition: $hoverAnimation;
   }
+}
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notFoundText {
+  color: $mainTextColor;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1em;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }

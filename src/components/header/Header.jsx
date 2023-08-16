@@ -1,4 +1,4 @@
-import style from "./Header.module.scss";
+import styles from "./Header.module.scss";
 import logo from "../../assets/svg/logo.svg";
 import login from "../../assets/svg/login.svg";
 import { NavLink } from "react-router-dom";
@@ -22,39 +22,40 @@ export const Header = () => {
     closeModalRegistration,
   } = useToggle();
   return (
-    <header className={style.header}>
-      <div className={style.logoWrp}>
-        <img src={logo} className={style.logoImg} />
-        <p className={style.logoText}>LearnLingo</p>
-      </div>
+    <header className={styles.header}>
+      <NavLink to="/" className={styles.logoWrp}>
+        <img src={logo} className={styles.logoImg} />
+        <p className={styles.logoText}>LearnLingo</p>
+      </NavLink>
+
       {isAuth ? (
-        <nav className={style.navWrp}>
-          <NavLink to="/" className={style.navLink}>
+        <nav className={styles.navWrp}>
+          <NavLink to="/" className={styles.navLink}>
             Home
           </NavLink>
-          <NavLink to="/teachers" className={style.navLink}>
+          <NavLink to="/teachers" className={styles.navLink}>
             Teachers
           </NavLink>
-          <NavLink to="/favorites" className={style.navLink}>
+          <NavLink to="/favorites" className={styles.navLink}>
             Favorites
           </NavLink>
         </nav>
       ) : (
-        <nav className={style.navWrp}>
-          <NavLink to="/" className={style.navLink}>
+        <nav className={styles.navWrp}>
+          <NavLink to="/" className={styles.navLink}>
             Home
           </NavLink>
-          <NavLink to="/teachers" className={style.navLink}>
+          <NavLink to="/teachers" className={styles.navLink}>
             Teachers
           </NavLink>
         </nav>
       )}
 
       {isAuth ? (
-        <div className={style.authUserWrp}>
+        <div className={styles.authUserWrp}>
           <p> Hello, {userName}</p>
           <button
-            className={style.loginBtn}
+            className={styles.loginBtn}
             type="button"
             onClick={() => {
               dispatch(logoutUser());
@@ -62,24 +63,24 @@ export const Header = () => {
               closeModalRegistration();
             }}
           >
-            <img src={login} className={style.loginSvg} />
+            <img src={login} className={styles.loginSvg} />
           </button>
         </div>
       ) : (
-        <div className={style.authWrp}>
+        <div className={styles.authWrp}>
           <button
-            className={style.loginBtn}
+            className={styles.loginBtn}
             type="button"
             onClick={openModalLogin}
           >
-            <img src={login} className={style.loginSvg} />
+            <img src={login} className={styles.loginSvg} />
             <span>Log in</span>
           </button>
           {isOpenLogin && (
             <LoginModal isOpen={isOpenLogin} onClose={closeModalLogin} />
           )}
           <button
-            className={style.registrationBtn}
+            className={styles.registrationBtn}
             type="button"
             onClick={openModalRegistration}
           >

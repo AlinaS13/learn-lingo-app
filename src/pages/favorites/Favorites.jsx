@@ -35,7 +35,7 @@ const FavoritesPage = () => {
         <Loader />
       ) : favoriteTeacher.length === 0 ? (
         <p className={styles.favoritesText}>
-          You do not have any teachers added yet
+          You don't have any teachers added yet
         </p>
       ) : (
         <ul className={styles.favoritesTeachersList}>
