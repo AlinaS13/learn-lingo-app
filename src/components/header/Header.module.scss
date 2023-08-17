@@ -42,6 +42,10 @@
       font-size: 20px;
     }
   }
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
 }
 
 .navWrp {
@@ -55,7 +59,7 @@
   font-weight: 400;
   line-height: 1.25em;
   &:hover,
-  :focus {
+  &:focus {
     color: $mainAccentColor;
     transition: $hoverAnimation;
   }
@@ -76,10 +80,9 @@
   border: none;
   padding: 0;
   &:hover,
-  :focus {
+  &:focus {
     color: $mainAccentColor;
     transform: scale(1.2);
-    // transition: $hoverAnimation;
   }
   span {
     font-size: 16px;
@@ -98,7 +101,7 @@
   line-height: 1.25em;
   border: transparent;
   &:hover,
-  :focus {
+  &:focus {
     color: #121417;
     background-color: $mainAccentColor;
     transition: $hoverAnimation;

@@ -35,8 +35,6 @@ const TeachersPage = () => {
       !language || teacher.languages.includes(language);
     const levelFilterResult = !level || teacher.levels.includes(level);
     const priceFilterResult = !price || `${teacher.price_per_hour}` === price;
-    console.log(price);
-    console.log(teacher.price_per_hour);
     return languageFilterResult && levelFilterResult && priceFilterResult;
   });
 

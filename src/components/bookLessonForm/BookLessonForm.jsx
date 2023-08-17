@@ -1,17 +1,17 @@
 import { Formik, Form, Field } from "formik";
-import styles from "./RegistrationForm.module.scss";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
+import styles from "./BookLessonForm.module.scss";
 import * as yup from "yup";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { registrationUser } from "../../redux/auth/authOperation";
+import { toast } from "react-toastify";
 
 const SignupSchema = yup.object().shape({
   name: yup
     .string()
     .typeError("Must be string")
-    .required("Please enter your name")
-    .matches(/^[a-zA-Z0-9а-яА-ЯІіЇї]+$/, "Special symbols are not allowed")
+    .required("Please enter your full name")
+    .matches(
+      /^[a-zA-Z0-9а-яА-ЯІіЇї]+[^ ]+( [^ ]+)$/,
+      "Special symbols are not allowed"
+    )
     .min(3, "Your username i s too short")
     .max(16, "Username cannot be longer than 16 characters"),
   email: yup
@@ -26,35 +26,24 @@ const SignupSchema = yup.object().shape({
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       "Invalid email format"
     ),
-  password: yup
+  phone: yup
     .string()
     .typeError("Must be string")
     .trim()
-    .required("Please enter your password")
-    .min(6, "Your password is too short")
-    .max(16, "Password cannot be longer than 16 characters")
-    .test(
-      "password",
-      "Password is little secure.Please enter an uppercase letter, a lowercase letter, and a number",
-      (value) =>
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,16}$/.test(value || "")
+    .required("Please enter your phone number")
+    .min(10, "Your phone number is too short")
+    .max(13, "phone number cannot be longer than 13 characters")
+    .matches(
+      /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+      "Invalid phone number format"
     ),
 });
 
-export const RegistrationForm = () => {
-  const [passwordType, setPasswordType] = useState("password");
-  const dispatch = useDispatch();
-
-  const handleRegister = (userData) => {
-    dispatch(registrationUser(userData));
-  };
-
-  const togglePassword = () => {
-    if (passwordType === "password") {
-      setPasswordType("text");
-      return;
-    }
-    setPasswordType("password");
+export const BookLessonForm = ({ onClick }) => {
+  const handleBookLesson = (userData) => {
+    const bookLessonUserContasts = userData;
+    console.log(bookLessonUserContasts);
+    onClick();
   };
   return (
     <Formik
@@ -62,12 +51,10 @@ export const RegistrationForm = () => {
       initialValues={{
         name: "",
         email: "",
-        password: "",
+        phone: "",
       }}
       validateOnBlur
-      onSubmit={(userData) => {
-        handleRegister(userData);
-      }}
+      onSubmit={(userData) => handleBookLesson(userData)}
     >
       {({
         values,
@@ -80,18 +67,17 @@ export const RegistrationForm = () => {
         dirty,
       }) => {
         return (
-          <Form className={styles.registrationForm}>
-            <label className={styles.registrationLabel}>
-              {" "}
+          <Form className={styles.bookLessonForm}>
+            <label className={styles.bookLessonLabel}>
               <Field
                 autoComplete="off"
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Full Name"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.name}
-                className={`${styles.registrationField} ${
+                className={`${styles.bookLessonField} ${
                   errors.name && touched.name ? styles.error : ""
                 } ${!errors.name && touched.name ? styles.success : ""}`}
               />
@@ -100,7 +86,7 @@ export const RegistrationForm = () => {
               )}
             </label>
 
-            <label className={styles.registrationLabel}>
+            <label className={styles.bookLessonLabel}>
               <Field
                 autoComplete="off"
                 name="email"
@@ -109,42 +95,36 @@ export const RegistrationForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
-                className={styles.registrationField}
+                className={styles.bookLessonField}
               />
               {touched.email && errors.email && (
                 <p className={styles.errorMessage}>{errors.email}</p>
               )}
             </label>
 
-            <label className={styles.registrationLabel}>
+            <label className={styles.bookLessonLabel}>
               <Field
                 autoComplete="off"
-                name="password"
-                type={passwordType}
-                placeholder="Password"
+                name="phone"
+                type="phone"
+                placeholder="Phone Number"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.password}
-                className={styles.registrationField}
+                value={values.phone}
+                className={styles.bookLessonField}
               />
-              <div className={styles.eyeBox} onClick={togglePassword}>
-                {passwordType === "password" ? (
-                  <BsEyeSlash fill="#121417" />
-                ) : (
-                  <BsEye fill="#121417" />
-                )}
-              </div>
-              {touched.password && errors.password && (
-                <p className={styles.errorMessage}>{errors.password}</p>
+              {touched.phone && errors.phone && (
+                <p className={styles.errorMessage}>{errors.phone}</p>
               )}
             </label>
+
             <button
               type="submit"
               disabled={!isValid && !dirty}
               onClick={handleSubmit}
-              className={styles.registrationButton}
+              className={styles.bookLessonButton}
             >
-              Sign Up
+              Book
             </button>
           </Form>
         );

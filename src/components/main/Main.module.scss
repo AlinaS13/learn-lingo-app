@@ -60,7 +60,7 @@
 
   &:hover,
   &:focus {
-    color: #fff;
+    color: $mainAccentColor;
     background-color: $mainTextColor;
     transition: $hoverAnimation;
   }

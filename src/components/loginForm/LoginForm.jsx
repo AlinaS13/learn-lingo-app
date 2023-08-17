@@ -5,7 +5,6 @@ import * as yup from "yup";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/auth/authOperation";
-// import { useToggle } from "../../hooks/useToggle";
 
 const SignInSchema = yup.object().shape({
   email: yup

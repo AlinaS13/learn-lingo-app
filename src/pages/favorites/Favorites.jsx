@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./Favorites.module.scss";
+import Favorites from "../../assets/images/favorites.jpg";
 import { getFavoritesTeachers } from "../../redux/favorites/favoritesSelector";
 import { useEffect, useState } from "react";
 import { getTeachers } from "../../redux/teachers/teachersOperations";
@@ -34,9 +35,12 @@ const FavoritesPage = () => {
       {isLoading ? (
         <Loader />
       ) : favoriteTeacher.length === 0 ? (
-        <p className={styles.favoritesText}>
-          You don't have any teachers added yet
-        </p>
+        <>
+          <p className={styles.favoritesText}>
+            You don't have any favorites teachers yet
+          </p>
+          <img src={Favorites} alt="Favorites" width="450px" height="350px" />
+        </>
       ) : (
         <ul className={styles.favoritesTeachersList}>
           {favoriteTeacher

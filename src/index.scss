@@ -39,11 +39,13 @@ img {
 
 a {
   text-decoration: none;
+  outline: transparent;
 }
 
 button {
   cursor: pointer;
   font-family: inherit;
+  outline: transparent;
 }
 
 .visually-hidden {
