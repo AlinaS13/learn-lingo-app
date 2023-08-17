@@ -17,7 +17,6 @@ import authReducer from "./auth/authSlicе";
 import teachersReducer from "./teachers/teachersSlice";
 import favoriteReducer from "./favorites/favoritesSlice";
 import storage from "redux-persist/lib/storage";
-import logger from "redux-logger";
 
 const persistConfig = {
   key: "root",
@@ -38,7 +37,6 @@ const middlewares = [
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     },
   }),
-  logger,
 ];
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

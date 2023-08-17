@@ -72,8 +72,6 @@ export const BookLessonModal = ({
                 name="reasonForLearning"
                 value="Career and business"
                 id="custom-1"
-                // checked={reasonForLearning === "Career and business"}
-                // onChange={setReasonForLearning("Career and business")}
               />
               <label htmlFor="custom-1" className={styles.radioInput}>
                 Career and business
@@ -84,8 +82,6 @@ export const BookLessonModal = ({
                 name="reasonForLearning"
                 value="Lesson for kids"
                 id="custom-2"
-                // checked={reasonForLearning === "Lesson for kids"}
-                // onChange={setReasonForLearning("reasonForLearning")}
               />
               <label htmlFor="custom-2" className={styles.radioInput}>
                 Lesson for kids
@@ -96,8 +92,6 @@ export const BookLessonModal = ({
                 name="reasonForLearning"
                 value="Living abroad"
                 id="custom-3"
-                // checked={reasonForLearning === "Living abroad"}
-                // onChange={setReasonForLearning("Living abroad")}
               />
               <label htmlFor="custom-3" className={styles.radioInput}>
                 Living abroad
@@ -108,8 +102,6 @@ export const BookLessonModal = ({
                 name="reasonForLearning"
                 value="Exams and coursework"
                 id="custom-4"
-                // checked={reasonForLearning === "Exams and coursework"}
-                // onChange={setReasonForLearning("Exams and coursework")}
               />
               <label htmlFor="custom-4" className={styles.radioInput}>
                 Exams and coursework
@@ -120,8 +112,6 @@ export const BookLessonModal = ({
                 name="reasonForLearning"
                 value="Culture, travel or hobby"
                 id="custom-5"
-                // checked={reasonForLearning === "Culture, travel or hobby"}
-                // onChange={() => setReasonForLearning(value)}
               />
               <label htmlFor="custom-5" className={styles.radioInput}>
                 Culture, travel or hobby

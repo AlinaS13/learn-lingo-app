@@ -2,27 +2,25 @@ import { Routes, Route } from "react-router-dom";
 import { PrivateRoute } from "./hooks/PrivateRoute";
 import { PublicRoute } from "./hooks/PublicRoute";
 
-import { lazy } from "react";
-import "./App.scss";
 import { Layout } from "./components/layout/Layout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Home = lazy(() => import("./pages/home/Home"));
-const Teachers = lazy(() => import("./pages/teachers/Teachers"));
-const Favorites = lazy(() => import("./pages/favorites/Favorites"));
-const NotFound = lazy(() => import("./pages/notFound/NotFound"));
+import HomePage from "../src/pages/home/Home";
+import TeachersPage from "../src/pages/teachers/Teachers";
+import FavoritesPage from "../src/pages/favorites/Favorites";
+import NotFoundPage from "./pages/notFound/NotFound";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route
             index
             element={
               <PublicRoute>
-                <Home />
+                <HomePage />
               </PublicRoute>
             }
           />
@@ -30,7 +28,7 @@ function App() {
             path="/teachers"
             element={
               <PublicRoute>
-                <Teachers />
+                <TeachersPage />
               </PublicRoute>
             }
           />
@@ -38,11 +36,11 @@ function App() {
             path="/favorites"
             element={
               <PrivateRoute>
-                <Favorites />
+                <FavoritesPage />
               </PrivateRoute>
             }
           />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
       <ToastContainer

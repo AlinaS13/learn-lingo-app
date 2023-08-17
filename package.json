@@ -1,6 +1,7 @@
 {
   "name": "learn-lingo-app",
   "private": true,
+  "homepage": "https://alinas13.github.io/learn-lingo-app/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

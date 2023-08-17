@@ -1,4 +1,3 @@
-// import { Header } from "../../components/header/Header";
 import { Main } from "../../components/main/Main";
 import styles from "./Home.module.scss";
 
