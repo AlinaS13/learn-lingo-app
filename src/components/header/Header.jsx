@@ -8,11 +8,17 @@ import { useToggle } from "../../hooks/useToggle.js";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, getUserName } from "../../redux/auth/authSelector";
 import { logoutUser } from "../../redux/auth/authOperation";
+import { useState } from "react";
+import BurgerSVG from "../../assets/svg/header/Burger";
+import Dropdown from "./Dropdown";
+import Menu from "./Menu";
 
 export const Header = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector(getUser);
   const userName = useSelector(getUserName);
+  const [isMenuActive, setIsMenuActive] = useState(false);
+  const [isDropdownActive, setIsDropdownActive] = useState(false);
   const {
     isOpenRegistration,
     isOpenLogin,
@@ -53,7 +59,7 @@ export const Header = () => {
 
       {isAuth ? (
         <div className={styles.authUserWrp}>
-          <p> Hello, {userName}</p>
+          <p className={styles.authUserName}> Hello, {userName}</p>
           <button
             className={styles.loginBtn}
             type="button"
@@ -94,6 +100,18 @@ export const Header = () => {
           )}
         </div>
       )}
+      <Dropdown
+        isDropdownActive={isDropdownActive}
+        setIsDropdownActive={setIsDropdownActive}
+      />
+      <button
+        type="button"
+        className={styles.burgerMenuBtn}
+        onClick={() => setIsMenuActive(true)}
+      >
+        <BurgerSVG />
+      </button>
+      <Menu setIsMenuActive={setIsMenuActive} isMenuActive={isMenuActive} />
     </header>
   );
 };

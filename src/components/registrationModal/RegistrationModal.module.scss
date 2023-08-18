@@ -3,19 +3,18 @@
 
 .modalOverlay {
   position: fixed;
-  top: 60px;
+  top: 0px;
   left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.25);
   z-index: 20;
 
   @media screen and (min-width: 768px) {
     position: fixed;
-    top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -28,17 +27,16 @@
 }
 .modalContainer {
   position: relative;
-  // width: 320px;
+  width: 250px;
   background-color: #ffffff;
   padding: 10px;
   z-index: 20;
-
+  border-radius: 30px;
+  padding: 25px;
+  flex-direction: column;
   @media screen and (min-width: 768px) {
     width: 438px;
-    // height: 600px;
     padding: 64px;
-    border-radius: 30px;
-    flex-direction: column;
   }
 }
 
@@ -46,46 +44,55 @@
   opacity: 0;
   outline: none;
   padding: 0px;
-  @media screen and (min-width: 768px) {
-    opacity: 1;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 32px;
-    height: 32px;
-    border: none;
-    border-radius: 50%;
-    background-color: white;
-    cursor: pointer;
+  position: absolute;
+  opacity: 1;
+  background-color: transparent;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 
-    &:hover,
-    &:focus,
-    &:active {
-      transform: scale(1.2);
-      color: $mainAccentColor;
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.2);
+    color: $mainAccentColor;
   }
 }
 .modalCloseSvg {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .modalTitle {
   color: $mainTextColor;
-
-  font-size: 40px;
-
   font-weight: 500;
   line-height: 1.2em;
+  font-size: 20px;
+  margin-bottom: 10px;
   letter-spacing: -0.8px;
-  margin-bottom: 20px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
 }
 .modalText {
   color: $mainTextColor;
-  font-size: 16px;
-
   font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 20px;
   line-height: 1.37em;
-  margin-bottom: 40px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
 }

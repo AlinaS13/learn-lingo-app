@@ -3,10 +3,18 @@
 
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding-left: 64px;
-  padding-right: 64px;
+  align-items: center;
+  padding-left: 23px;
+  padding-right: 23px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    padding-left: 66px;
+    padding-right: 66px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    padding-left: 128px;
+    padding-right: 128px;
+  }
 }
 
 .logoWrp {
@@ -53,18 +61,24 @@
   gap: 28px;
 }
 .navLink {
-  color: $mainTextColor;
-  font-family: Roboto;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.25em;
-  &:hover,
-  &:focus {
-    color: $mainAccentColor;
-    transition: $hoverAnimation;
+  display: none;
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: block;
+    color: $mainTextColor;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25em;
+    &:hover,
+    &:focus {
+      color: $mainAccentColor;
+      transition: $hoverAnimation;
+    }
+    &[aria-current="page"] {
+      color: $mainAccentColor;
+    }
   }
-  &[aria-current="page"] {
-    color: $mainAccentColor;
+  @media screen and (min-width: $breakpoint-desktop) {
   }
 }
 
@@ -73,42 +87,72 @@
   gap: 16px;
 }
 .loginBtn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  border: none;
-  padding: 0;
-  &:hover,
-  &:focus {
-    color: $mainAccentColor;
-    transform: scale(1.2);
+  display: none;
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    &:hover,
+    &:focus {
+      color: $mainAccentColor;
+      transform: scale(1.2);
+    }
+    span {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.25em;
+    }
   }
-  span {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.25em;
+  @media screen and (min-width: $breakpoint-desktop) {
   }
 }
 
 .registrationBtn {
-  padding: 14px 39px;
-  background-color: #121417;
-  border-radius: 12px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.25em;
-  border: transparent;
-  &:hover,
-  &:focus {
-    color: #121417;
-    background-color: $mainAccentColor;
-    transition: $hoverAnimation;
+  display: none;
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: block;
+    padding: 14px 39px;
+    background-color: #121417;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25em;
+    border: transparent;
+    &:hover,
+    &:focus {
+      color: #121417;
+      background-color: $mainAccentColor;
+      transition: $hoverAnimation;
+    }
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
   }
 }
 
 .authUserWrp {
   display: flex;
+  align-items: center;
   gap: 8px;
+}
+
+.burgerMenuBtn {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.authUserName {
+  color: $mainTextColor;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25em;
 }

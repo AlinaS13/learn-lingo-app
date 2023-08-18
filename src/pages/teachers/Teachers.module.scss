@@ -3,8 +3,13 @@
 
 .filterContainer {
   @include container;
-  margin-bottom: 32px;
   margin-top: 12px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    margin-bottom: 0px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    margin-bottom: 32px;
+  }
 }
 .container {
   @include container;
@@ -26,16 +31,20 @@
   font-weight: 700;
   line-height: 1.55em;
   outline: none;
-  margin-bottom: 32px;
+
   padding: 16px 48px;
   border-radius: 12px;
   border: transparent;
-
   &:hover,
   &:focus {
     color: #fff;
     background-color: $mainTextColor;
     transition: $hoverAnimation;
+  }
+  @media screen and (min-width: $breakpoint-tablet) {
+    margin-bottom: 32px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
   }
 }
 

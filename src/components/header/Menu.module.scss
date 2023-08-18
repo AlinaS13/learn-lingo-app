@@ -1,0 +1,118 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.cross {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  @media screen and (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
+.crossWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 25px;
+  padding-right: 25px;
+  margin-bottom: 40px;
+}
+.backdrop {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-color: $mainBgColor;
+  overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 200ms linear;
+  &::after {
+    z-index: -1;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 320px;
+    height: 343px;
+    content: "";
+  }
+}
+
+.backdrop.active {
+  transform: translateX(0);
+}
+
+.containerMobileMenu {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 16px;
+}
+.navWrp {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.navLink {
+  color: $mainTextColor;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25em;
+  &:hover,
+  &:focus {
+    color: $mainAccentColor;
+    transition: $hoverAnimation;
+  }
+  &[aria-current="page"] {
+    color: $mainAccentColor;
+  }
+}
+
+.authWrp {
+  display: flex;
+  gap: 16px;
+}
+.loginBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  &:hover,
+  &:focus {
+    color: $mainAccentColor;
+    transform: scale(1.2);
+  }
+  span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25em;
+  }
+}
+
+.registrationBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  &:hover,
+  &:focus {
+    color: $mainAccentColor;
+    transform: scale(1.2);
+  }
+  span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25em;
+  }
+}
+
+.authUserWrp {
+  display: flex;
+  gap: 8px;
+}

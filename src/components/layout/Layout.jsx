@@ -9,9 +9,9 @@ export const Layout = () => {
     <>
       <div className={styles.content}>
         <Header />
-        {/* <Suspense fallback={<Loader />}> */}
-        <Outlet />
-        {/* </Suspense> */}
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </div>
     </>
   );

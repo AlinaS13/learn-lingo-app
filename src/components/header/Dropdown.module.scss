@@ -1,0 +1,40 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.dropdown {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dropdownHidden {
+  display: none;
+}
+
+.dropdownContent {
+  position: absolute;
+  top: 78px;
+  right: 128px;
+  height: 130px;
+  width: 161px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: $mainBgColor;
+  border-radius: 8px;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    height: 134px;
+    width: 177px;
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    right: 211px;
+    height: 134px;
+    width: 177px;
+  }
+}

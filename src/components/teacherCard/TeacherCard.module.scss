@@ -2,23 +2,47 @@
 @import "../../scss/variables";
 
 .teacherItem {
-  display: flex;
-  gap: 48px;
-  align-items: flex-start;
+  box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
+    rgba(0, 0, 0, 0.25);
   margin-bottom: 32px;
   background: $secondaryBgColor;
   border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
-    rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    padding: 24px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
 }
 .teacherMainInfoWrp {
   width: 100%;
 }
 .teacherMainInfo {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
+}
+.teacherImgName {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  @media screen and (min-width: $breakpoint-tablet) {
+    gap: 48px;
+    align-items: flex-start;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
 }
 .teacherImgWrp {
   position: relative;
@@ -69,32 +93,59 @@
   line-height: 1em;
 }
 .teacherInfoListWrp {
-  display: flex;
-  align-items: flex-start;
-  gap: 64px;
+  position: relative;
+  @media screen and (min-width: $breakpoint-tablet) {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    gap: 64px;
+  }
 }
 .teacherInfoList {
   display: flex;
-  //   gap: 32px;
   align-items: flex-start;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  @media screen and (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
 }
 .teacherInfoItem {
-  padding-right: 10px;
-  padding-left: 10px;
   display: flex;
   gap: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
   align-items: center;
-  border-right: 1px solid rgba(18, 20, 23, 0.2);
-  &:last-child {
-    // margin-left: 64px;
-    border-right: none;
+  margin-bottom: 8px;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    border-right: 1px solid rgba(18, 20, 23, 0.2);
+    &:last-child {
+      border-right: none;
+    }
   }
 }
 .teacherInfoText {
   color: $mainTextColor;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1.5em;
+  line-height: 1.1em;
+  @media screen and (min-width: $breakpoint-tablet) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5em;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
 }
 .priceColor {
   color: #38cd3e;
@@ -117,9 +168,15 @@
       margin-bottom: 16px;
     }
   }
+  @media screen and (min-width: $breakpoint-tablet) {
+    margin-left: 172px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
 }
 
 .readMoreBtn {
+  padding: 0;
   background-color: transparent;
   border: none;
   color: $mainTextColor;
@@ -128,6 +185,11 @@
   line-height: 1.5em;
   text-decoration-line: underline;
   margin-bottom: 32px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    margin-left: 172px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
 }
 .teacherExperience {
   color: $mainTextColor;
@@ -148,7 +210,14 @@
 }
 .teacherLevelsList {
   display: flex;
-  gap: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
+  @media screen and (min-width: $breakpoint-tablet) {
+    margin-left: 172px;
+    gap: 12px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
 }
 .teacherLevelsItem {
   border-radius: 35px;
@@ -161,6 +230,17 @@
   &:first-of-type {
     background-color: $mainAccentColor;
     border-color: $mainAccentColor;
+  }
+  @media screen and (min-width: $breakpoint-tablet) {
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+  }
+}
+.reviewsWrp {
+  @media screen and (min-width: $breakpoint-tablet) {
+    margin-left: 172px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
   }
 }
 .reviewer {
@@ -192,11 +272,20 @@
   line-height: 1.5em;
 }
 .addToFavoriteBtn {
+  position: absolute;
+  right: 3px;
+  bottom: 160px;
   border: none;
   background-color: transparent;
+  padding: 0;
   &:hover,
   &:focus {
     transform: scale(1.2);
+  }
+  @media screen and (min-width: $breakpoint-tablet) {
+    position: static;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
   }
 }
 .bookLessonBtn {

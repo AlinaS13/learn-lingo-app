@@ -7,18 +7,6 @@ export const getTeachers = createAsyncThunk(
   "teachers/getTeachers",
   async (_, thunkAPI) => {
     const dbRef = ref(database);
-    // get(child(dbRef, "teachers/"))
-    //   .then((snapshot) => {
-    //     if (snapshot.exists()) {
-    //       console.log(snapshot.val());
-    //     } else {
-    //       toast.error("No data available");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     toast.error("Something went wrong");
-    //     return thunkAPI.rejectWithValue(error.message);
-    //   });
     try {
       const snapshot = await get(child(dbRef, "/"));
       if (snapshot.exists()) {

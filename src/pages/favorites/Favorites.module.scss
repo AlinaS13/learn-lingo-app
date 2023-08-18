@@ -18,11 +18,9 @@
   font-weight: 700;
   line-height: 1.55em;
   outline: none;
-
   padding: 16px 48px;
   border-radius: 12px;
   border: transparent;
-
   &:hover,
   &:focus {
     color: #fff;
@@ -38,8 +36,19 @@
   line-height: 1em;
   margin-top: 50px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .favoritesTeachersList {
   width: 100%;
+}
+
+.favoritesImg {
+  width: 310px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    width: 370px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    width: 480px;
+  }
 }

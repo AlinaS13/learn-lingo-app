@@ -1,7 +1,6 @@
 import { RxCross2 } from "react-icons/rx";
 import styles from "./BookLessonModal.module.scss";
-import "./styles.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { BookLessonForm } from "../bookLessonForm/bookLessonForm";
 
 export const BookLessonModal = ({
@@ -61,61 +60,6 @@ export const BookLessonModal = ({
               <p>
                 {name} {surname}
               </p>
-            </div>
-          </div>
-          <div>
-            <div className={styles.radioInputWrp}>
-              <h3>What is your main reason for learning English?</h3>
-              <input
-                className="custom-radio"
-                type="radio"
-                name="reasonForLearning"
-                value="Career and business"
-                id="custom-1"
-              />
-              <label htmlFor="custom-1" className={styles.radioInput}>
-                Career and business
-              </label>
-              <input
-                className="custom-radio"
-                type="radio"
-                name="reasonForLearning"
-                value="Lesson for kids"
-                id="custom-2"
-              />
-              <label htmlFor="custom-2" className={styles.radioInput}>
-                Lesson for kids
-              </label>
-              <input
-                className="custom-radio"
-                type="radio"
-                name="reasonForLearning"
-                value="Living abroad"
-                id="custom-3"
-              />
-              <label htmlFor="custom-3" className={styles.radioInput}>
-                Living abroad
-              </label>
-              <input
-                className="custom-radio"
-                type="radio"
-                name="reasonForLearning"
-                value="Exams and coursework"
-                id="custom-4"
-              />
-              <label htmlFor="custom-4" className={styles.radioInput}>
-                Exams and coursework
-              </label>
-              <input
-                className="custom-radio"
-                type="radio"
-                name="reasonForLearning"
-                value="Culture, travel or hobby"
-                id="custom-5"
-              />
-              <label htmlFor="custom-5" className={styles.radioInput}>
-                Culture, travel or hobby
-              </label>
             </div>
           </div>
           <BookLessonForm onClick={onClose} />

@@ -39,7 +39,11 @@ const FavoritesPage = () => {
           <p className={styles.favoritesText}>
             You don't have any favorites teachers yet
           </p>
-          <img src={Favorites} alt="Favorites" width="450px" height="350px" />
+          <img
+            src={Favorites}
+            alt="Favorites"
+            className={styles.favoritesImg}
+          />
         </>
       ) : (
         <ul className={styles.favoritesTeachersList}>

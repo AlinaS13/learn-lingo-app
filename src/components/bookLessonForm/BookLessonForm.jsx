@@ -1,17 +1,16 @@
 import { Formik, Form, Field } from "formik";
 import styles from "./BookLessonForm.module.scss";
+import "./styles.css";
 import * as yup from "yup";
+import { useState } from "react";
 import { toast } from "react-toastify";
 
 const SignupSchema = yup.object().shape({
   name: yup
     .string()
     .typeError("Must be string")
-    .required("Please enter your full name")
-    .matches(
-      /^[a-zA-Z0-9а-яА-ЯІіЇї]+[^ ]+( [^ ]+)$/,
-      "Special symbols are not allowed"
-    )
+    .required("Please enter your name")
+    .matches(/^[a-zA-Z0-9а-яА-ЯІіЇї]+$/, "Special symbols are not allowed")
     .min(3, "Your username i s too short")
     .max(16, "Username cannot be longer than 16 characters"),
   email: yup
@@ -40,9 +39,16 @@ const SignupSchema = yup.object().shape({
 });
 
 export const BookLessonForm = ({ onClick }) => {
+  const [reasonForLearning, setReasonForLearning] = useState(
+    "Career and business"
+  );
+  function handleRadioCheck(e) {
+    const value = e.target.value;
+    setReasonForLearning(value);
+  }
   const handleBookLesson = (userData) => {
     const bookLessonUserContasts = userData;
-    console.log(bookLessonUserContasts);
+    toast.success("Thanks for your book! We contact you soon");
     onClick();
   };
   return (
@@ -68,12 +74,77 @@ export const BookLessonForm = ({ onClick }) => {
       }) => {
         return (
           <Form className={styles.bookLessonForm}>
+            <div className={styles.radioInputWrp}>
+              <h3>What is your main reason for learning English?</h3>
+              <div>
+                <input
+                  checked={reasonForLearning === "Career and business"}
+                  className="custom-radio"
+                  type="radio"
+                  name="reasonForLearning"
+                  value="Career and business"
+                  id="custom-1"
+                  onChange={handleRadioCheck}
+                />
+                <label htmlFor="custom-1" className={styles.radioInput}>
+                  Career and business
+                </label>
+                <input
+                  className="custom-radio"
+                  type="radio"
+                  name="reasonForLearning"
+                  value="Lesson for kids"
+                  id="custom-2"
+                  checked={reasonForLearning === "Lesson for kids"}
+                  onChange={handleRadioCheck}
+                />
+                <label htmlFor="custom-2" className={styles.radioInput}>
+                  Lesson for kids
+                </label>
+                <input
+                  className="custom-radio"
+                  type="radio"
+                  name="reasonForLearning"
+                  value="Living abroad"
+                  id="custom-3"
+                  checked={reasonForLearning === "Living abroad"}
+                  onChange={handleRadioCheck}
+                />
+                <label htmlFor="custom-3" className={styles.radioInput}>
+                  Living abroad
+                </label>
+                <input
+                  className="custom-radio"
+                  type="radio"
+                  name="reasonForLearning"
+                  value="Exams and coursework"
+                  id="custom-4"
+                  checked={reasonForLearning === "Exams and coursework"}
+                  onChange={handleRadioCheck}
+                />
+                <label htmlFor="custom-4" className={styles.radioInput}>
+                  Exams and coursework
+                </label>
+                <input
+                  className="custom-radio"
+                  type="radio"
+                  name="reasonForLearning"
+                  value="Culture, travel or hobby"
+                  id="custom-5"
+                  checked={reasonForLearning === "Culture, travel or hobby"}
+                  onChange={handleRadioCheck}
+                />
+                <label htmlFor="custom-5" className={styles.radioInput}>
+                  Culture, travel or hobby
+                </label>
+              </div>
+            </div>
             <label className={styles.bookLessonLabel}>
               <Field
                 autoComplete="off"
                 type="text"
                 name="name"
-                placeholder="Full Name"
+                placeholder="Name"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.name}

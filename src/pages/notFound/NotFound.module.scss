@@ -18,3 +18,13 @@
   margin-top: 50px;
   margin-bottom: 20px;
 }
+
+.notFoundImg {
+  width: 310px;
+  @media screen and (min-width: $breakpoint-tablet) {
+    width: 370px;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    width: 550px;
+  }
+}

@@ -37,7 +37,6 @@ export const TeacherCard = ({ teacher }) => {
   const favoritesTeachers = useSelector(getFavoritesTeachers);
   const isTeacherFavorite = favoritesTeachers.includes(id);
 
-  const config = genConfig();
   const dispatch = useDispatch();
 
   const { isOpenBookLesson, openModalBookLesson, closeModalBookLesson } =
@@ -58,29 +57,28 @@ export const TeacherCard = ({ teacher }) => {
     toast.success("Your favorites have been removed");
   };
 
-  // const handleModalOpen = (e) => {
-  //   e.preventDefault();
-  //   setIsModalOpen(true);
-  // };
   return (
-    <div>
+    <>
       <li className={styles.teacherItem}>
-        <div className={styles.teacherImgWrp}>
-          <img
-            src={avatar_url}
-            className={styles.teacherImg}
-            height="100px"
-            width="100px"
-            alt="teacher img"
-          />
-        </div>
         <div className={styles.teacherMainInfoWrp}>
           <div className={styles.teacherMainInfo}>
-            <div>
-              <p className={styles.teacherPreTitle}>Languages</p>
-              <p className={styles.teacherName}>
-                {name} {surname}
-              </p>
+            <div className={styles.teacherImgName}>
+              {" "}
+              <div className={styles.teacherImgWrp}>
+                <img
+                  src={avatar_url}
+                  className={styles.teacherImg}
+                  height="100px"
+                  width="100px"
+                  alt="teacher img"
+                />
+              </div>
+              <div>
+                <p className={styles.teacherPreTitle}>Languages</p>
+                <p className={styles.teacherName}>
+                  {name} {surname}
+                </p>
+              </div>
             </div>
             <div className={styles.teacherInfoListWrp}>
               <ul className={styles.teacherInfoList}>
@@ -104,7 +102,6 @@ export const TeacherCard = ({ teacher }) => {
                   </p>
                 </li>
               </ul>
-
               {isTeacherFavorite && isAuth ? (
                 <button
                   onClick={handleRemoveFavoritesTeachers}
@@ -150,7 +147,10 @@ export const TeacherCard = ({ teacher }) => {
                 {reviews.map((review) => (
                   <li className={styles.reviewsItem} key={nanoid()}>
                     <div className={styles.reviewsUser}>
-                      <Avatar style={{ width: "3rem", height: "3rem" }} />
+                      <Avatar
+                        style={{ width: "3rem", height: "3rem" }}
+                        {...genConfig(review.reviewer_name)}
+                      />
                       <div className={styles.reviewer}>
                         <p>{review.reviewer_name}</p>
                         <div>
@@ -193,6 +193,6 @@ export const TeacherCard = ({ teacher }) => {
           avatar_url={avatar_url}
         />
       )}
-    </div>
+    </>
   );
 };
